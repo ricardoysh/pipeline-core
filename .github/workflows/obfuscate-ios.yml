@@ -1,0 +1,12 @@
+name: obfuscate code ios
+
+on:
+  workflow_call
+
+jobs:
+  obfuscate:
+    runs-on: macos-latest
+    steps:
+      - name: obfuscate code
+        run: |
+          echo "--------------- OBFUSCATE CODE IOS!!--------------------"
