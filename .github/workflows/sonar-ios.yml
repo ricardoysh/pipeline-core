@@ -1,0 +1,13 @@
+name: sonar scan ios
+on:
+  workflow_call
+jobs:
+  scan-ios:
+    runs-on: macos-latest
+    steps:
+      - name: run sonar scan
+        run: |
+          echo "----------------------------------------"
+          echo " Run Sonar Scan"
+          echo "----------------------------------------"
+        
