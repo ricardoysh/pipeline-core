@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos
+    runs-on: macos-latest
     steps:
       - name: build ios project
         run: echo "Buildando a aplicação iOS"
