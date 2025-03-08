@@ -1,0 +1,11 @@
+name: build ios
+
+on:
+  workflow_call
+
+jobs:
+  build:
+    runs-on: macos
+    steps:
+      - name: build ios project
+        run: echo "Buildando a aplicação iOS"
