@@ -1,14 +1,26 @@
 name: build ios
 
 on:
-  workflow_call
+  workflow_call:
+    inputs:
+      SCHEME:
+        required: true
+        type: string
+      ORG:
+        required: true
+        type: string
 
 jobs:
   build:
     runs-on: macos-latest
     steps:
       - name: build ios project
-        run: echo "Buildando a aplicação iOS"
+        run: |
+          echo "Buildando a aplicação iOS"
+          echo ""
+          echo "${{ inputs.SCHEME }}"
+          echo "${{ inputs.ORG }}"
+
 
       - name: package
         run: |
