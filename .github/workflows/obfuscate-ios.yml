@@ -11,6 +11,11 @@ on:
 jobs:
   obfuscate:
     runs-on: macos-latest
+
+    outputs:
+      SCHEME: ${{ steps.load-vars.outputs.SCHEME }}
+      ORG: ${{ steps.load-vars.outputs.ORG }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -44,5 +49,5 @@ jobs:
       - name: Runs on anhother runner
         run: |
           # -----------> Show variables another runner
-          echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
-          echo "ORG: ${{ steps.load-vars.outputs.ORG }}"   
+          echo "SCHEME: ${{ needs.obfuscate.outputs.SCHEME }}"
+          echo "ORG: ${{ needs.obfuscate.outputs.ORG }}"
