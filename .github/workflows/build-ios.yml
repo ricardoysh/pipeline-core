@@ -30,6 +30,12 @@ jobs:
           echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
           echo "ORG: ${{ steps.load-vars.outputs.ORG }}"
 
+      - name: RUN BUILD APPLICATION
+        run: |
+          echo ""
+          echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
+          echo "ORG: ${{ steps.load-vars.outputs.ORG }}"
+
       # - name: package
       #   run: |
       #     mkdir -p path/to/artifact
