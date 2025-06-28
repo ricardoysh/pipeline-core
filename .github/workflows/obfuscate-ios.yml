@@ -3,20 +3,27 @@ name: obfuscate code ios
 on:
   workflow_call:
     inputs:
-      SCHEME:
+      vars_file:
         required: true
         type: string
-      ORG:
-        required: true
-        type: string
+      # SCHEME:
+      #   required: true
+      #   type: string
+      # ORG:
+      #   required: true
+      #   type: string
 
 jobs:
   obfuscate:
     runs-on: macos-latest
     steps:
-      - name: obfuscate code
+      - name: LOAD VARIABLES
+        id: load-vars
         run: |
-          echo "--------------- OBFUSCATE CODE IOS!!--------------------"
-          echo ""
-          echo "${{ inputs.SCHEME }}"
-          echo "${{ inputs.ORG }}"
+          SCHEME=$(yq e .variables.SCHEME ${{ inputs.vars_file }})
+          ORG=$(yq e .variables.ORG ${{ inputs.vars_file }})
+      
+      - name: SHOW VARIABLES
+        run: |
+          echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
+          echo "ORG: ${{ steps.load-vars.outputs.ORG }}"

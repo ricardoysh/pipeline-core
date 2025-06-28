@@ -2,22 +2,31 @@ name: sonar scan ios
 on:
   workflow_call:
     inputs:
-      SCHEME:
+      vars_file:
         required: true
         type: string
-      ORG:
-        required: true
-        type: string
+
+    #   SCHEME:
+    #     required: true
+    #     type: string
+    #   ORG:
+    #     required: true
+    #     type: string
 
 jobs:
   scan-ios:
     runs-on: macos-latest
     steps:
-      - name: run sonar scan
+      - name: LOAD VARIABLES
+        id: load-vars
         run: |
-          echo "----------------------------------------"
-          echo " Run Sonar Scan"
-          echo "${{ inputs.SCHEME }}"
-          echo "${{ inputs.ORG }}"
-          echo "----------------------------------------"
+          SCHEME=$(yq e .variables.SCHEME ${{ inputs.vars_file }})
+          ORG=$(yq e .variables.ORG ${{ inputs.vars_file }})
+      
+      - name: SHOW VARIABLES
+        run: |
+          echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
+          echo "ORG: ${{ steps.load-vars.outputs.ORG }}"
+
+
         
