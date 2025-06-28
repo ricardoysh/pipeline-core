@@ -19,7 +19,7 @@ jobs:
       - name: LOAD VARIABLES
         id: load-vars
         run: |
-          # ------------ Loading variables...
+          # ------------> Loading variables...
           SCHEME=$(yq e .variables.SCHEME ${{ inputs.vars_file }})
           ORG=$(yq e .variables.ORG ${{ inputs.vars_file }})
           
@@ -28,7 +28,7 @@ jobs:
 
       - name: SHOW VARIABLES
         run: |
-          # ------------ showing variables...
+          # ------------> showing variables...
           echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
           echo "ORG: ${{ steps.load-vars.outputs.ORG }}"
 
