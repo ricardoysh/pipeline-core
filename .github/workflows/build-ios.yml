@@ -22,12 +22,12 @@ jobs:
           echo "${{ inputs.ORG }}"
 
 
-      - name: package
-        run: |
-          mkdir -p path/to/artifact
-          echo hello > path/to/artifact/world.txt
+      # - name: package
+      #   run: |
+      #     mkdir -p path/to/artifact
+      #     echo hello > path/to/artifact/world.txt
       
-      - uses: actions/upload-artifact@v4
-        with:
-          name: my-artifact-ios
-          path: path/to/artifact/world.txt
+      # - uses: actions/upload-artifact@v4
+      #   with:
+      #     name: my-artifact-ios
+      #     path: path/to/artifact/world.txt
