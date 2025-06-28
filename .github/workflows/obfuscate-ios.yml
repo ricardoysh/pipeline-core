@@ -39,7 +39,7 @@ jobs:
   
   post-obfuscate:
     needs: obfuscate
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: Runs on anhother runner
         run: |
