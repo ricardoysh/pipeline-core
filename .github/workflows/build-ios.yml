@@ -6,12 +6,7 @@ on:
       vars_file:
         required: true
         type: string
-      # SCHEME:
-      #   required: true
-      #   type: string
-      # ORG:
-      #   required: true
-      #   type: string
+
 
 jobs:
   build:

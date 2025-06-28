@@ -1,4 +1,5 @@
 name: sonar scan ios
+
 on:
   workflow_call:
     inputs:
@@ -6,26 +7,24 @@ on:
         required: true
         type: string
 
-    #   SCHEME:
-    #     required: true
-    #     type: string
-    #   ORG:
-    #     required: true
-    #     type: string
 
 jobs:
   scan-ios:
     runs-on: macos-latest
     steps:
+
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: LOAD VARIABLES
         id: load-vars
         run: |
           SCHEME=$(yq e .variables.SCHEME ${{ inputs.vars_file }})
           ORG=$(yq e .variables.ORG ${{ inputs.vars_file }})
-      
+          
+          echo "SCHEME=${SCHEME}" >> $GITHUB_OUTPUT
+          echo "ORG=${ORG}" >> $GITHUB_OUTPUT
+          
       - name: SHOW VARIABLES
         run: |
           echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
