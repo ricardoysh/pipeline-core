@@ -36,3 +36,13 @@ jobs:
           # ------------> obfuscation application...
           echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
           echo "ORG: ${{ steps.load-vars.outputs.ORG }}"
+  
+  post-obfuscate:
+    needs: obfuscate
+    runs-on: ubuntu
+    steps:
+      - name: Runs on anhother runner
+        run: |
+          # -----------> Show variables another runner
+          echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
+          echo "ORG: ${{ steps.load-vars.outputs.ORG }}"   
