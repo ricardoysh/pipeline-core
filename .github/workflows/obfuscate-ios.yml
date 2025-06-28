@@ -33,6 +33,6 @@ jobs:
       
       - name: RUN OBFUSCATE
         run: |
-           # ------------> obfuscation application...
+          # ------------> obfuscation application...
           echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
           echo "ORG: ${{ steps.load-vars.outputs.ORG }}"
