@@ -42,6 +42,7 @@ jobs:
           # echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
           # echo "ORG: ${{ steps.load-vars.outputs.ORG }}"
 
+          echo " -------> output with env:"
           echo "$SCHEME"
           echo "$ORG"
         env:
