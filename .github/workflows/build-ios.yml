@@ -20,11 +20,11 @@ jobs:
         id: load-vars
         run: |
           # ------------> Loading variables...
-          SCHEME=$(yq e .variables.SCHEME ${{ inputs.vars_file }})
-          ORG=$(yq e .variables.ORG ${{ inputs.vars_file }})
+          echo "SCHEME=$(yq e .variables.SCHEME ${{ inputs.vars_file }})" >> $GITHUB_OUTPUT
+          echo "ORG=$(yq e .variables.ORG ${{ inputs.vars_file }})" >> $GITHUB_OUTPUT
 
-          echo "SCHEME=${SCHEME}" >> $GITHUB_OUTPUT
-          echo "ORG=${ORG}" >> $GITHUB_OUTPUT
+          # echo "SCHEME=${SCHEME}" >> $GITHUB_OUTPUT
+          # echo "ORG=${ORG}" >> $GITHUB_OUTPUT
 
       - name: SHOW VARIABLES
         run: |
