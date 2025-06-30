@@ -51,6 +51,6 @@ jobs:
           # -----------> Show variables another runner
           echo "SCHEME: ${{ needs.obfuscate.outputs.SCHEME }}"
           echo "ORG: ${{ needs.obfuscate.outputs.ORG }}"
-          echo ""
+          echo "Teste vars"
           ${{ vars.SCHEME }}
           ${{ vars.ORG }}
