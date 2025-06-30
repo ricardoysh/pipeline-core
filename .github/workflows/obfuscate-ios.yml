@@ -39,8 +39,15 @@ jobs:
       - name: RUN OBFUSCATE
         run: |
           # ------------> obfuscation application...
-          echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
-          echo "ORG: ${{ steps.load-vars.outputs.ORG }}"
+          # echo "SCHEME: ${{ steps.load-vars.outputs.SCHEME }}"
+          # echo "ORG: ${{ steps.load-vars.outputs.ORG }}"
+
+          echo "$SCHEME"
+          echo "$ORG"
+        env:
+          SCHEME: ${{ steps.load-vars.outputs.SCHEME }}
+          ORG: ${{ steps.load-vars.outputs.ORG }}
+
   
   post-obfuscate:
     needs: obfuscate
@@ -56,4 +63,3 @@ jobs:
           ${{ env.ORG }}
 
 
-          
