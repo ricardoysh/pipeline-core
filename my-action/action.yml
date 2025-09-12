@@ -27,14 +27,16 @@ runs:
       run: |
         echo "Teste step 1"
         echo "${{ inputs.nome }}"
+      shell: bash  
     
     - name: step 2
       run: |
         echo "Teste step 2"
         echo "${{ inputs.empresa }}"
+      shell: bash 
     
     - name: step 3
       run: |
         echo "Teste step 3"
         echo "${{ inputs.cargo }}"
-    
+      shell: bash 
