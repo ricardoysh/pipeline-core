@@ -1,19 +1,36 @@
 name: myAction
 
+inputs:
+  nome:
+    description: "nome"
+    required: true
+  empresa:
+    description: "empresa"
+    required: trud
+  cargo:
+   description: "cargo"
+   required: true
+
+
 runs:
   using: "composite"
 
   steps:
+    - name: Checkout Code
+      uses: actions/Checkout@v4
 
     - name: step 1
       run: |
         echo "Teste step 1"
+        echo "${{ inputs.nome }}"
     
     - name: step 2
       run: |
         echo "Teste step 2"
+        echo "${{ inputs.empresa }}"
     
     - name: step 3
       run: |
         echo "Teste step 3"
+        echo "${{ inputs.cargo }}"
     
