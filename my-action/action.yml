@@ -1,0 +1,19 @@
+name: myAction
+
+runs:
+  using: "composite"
+
+  steps:
+
+    - name: step 1
+      run: |
+        echo "Teste step 1"
+    
+    - name: step 2
+      run: |
+        echo "Teste step 2"
+    
+    - name: step 3
+      run: |
+        echo "Teste step 3"
+    
