@@ -1,5 +1,9 @@
 name: myAction
 
+branding:
+  icon: 'package'
+  color: 'blue'
+
 inputs:
   nome:
     description: "nome"
