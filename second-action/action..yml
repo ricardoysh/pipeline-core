@@ -17,6 +17,9 @@ runs:
 
   steps:
 
+  - name: Checkout Code
+    uses: actions/Checkout@v4
+
   - name: NODE VERSION
     run: |
       # ----------------> Node VERSION
