@@ -1,0 +1,38 @@
+name: 'second-action'
+
+inputs:
+
+  node_version:
+    description: "versao do node"
+    required: true
+  java_version:
+    description: "versao do java"
+    required: true
+  python_version:
+    description: "versao do python"
+    required: true
+
+runs:
+  using: "composite"
+
+  steps:
+
+  - name: NODE VERSION
+    run: |
+      # ----------------> Node VERSION
+      echo "${{ inputs.node_version }}"
+  
+  - name: JAVA VERSION
+    run: |
+      # ----------------> Java VERSION
+      echo "${{ inputs.java_version }}"
+
+  - name: PYTHON VERSION
+    run: |
+      # ----------------> PYTHON VERSION
+      echo "${{ inputs.python_version }}"
+  
+  - name: Finish Job
+    run: |
+      # -------- finish ----------
+      echo "Finish Success!!"
