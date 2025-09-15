@@ -24,18 +24,22 @@ runs:
     run: |
       # ----------------> Node VERSION
       echo "${{ inputs.node_version }}"
+    shell: bash
   
   - name: JAVA VERSION
     run: |
       # ----------------> Java VERSION
       echo "${{ inputs.java_version }}"
+    shell: bash
 
   - name: PYTHON VERSION
     run: |
       # ----------------> PYTHON VERSION
       echo "${{ inputs.python_version }}"
-  
+    shell: bash
+
   - name: Finish Job
     run: |
       # -------- finish ----------
       echo "Finish Success!!"
+    shell: bash
